@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A22FCC628FC281D0033D9C1 /* TextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22FCC528FC281D0033D9C1 /* TextItem.swift */; };
+		3A22FCC828FC29070033D9C1 /* RecognizedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22FCC728FC29070033D9C1 /* RecognizedContent.swift */; };
+		3A22FCCA28FC29D30033D9C1 /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22FCC928FC29D30033D9C1 /* TextRecognition.swift */; };
 		3A3085C928FC01E1008AC49B /* oneTwoKnowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3085C828FC01E1008AC49B /* oneTwoKnowApp.swift */; };
 		3A3085CB28FC01E1008AC49B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3085CA28FC01E1008AC49B /* ContentView.swift */; };
 		3A3085CD28FC01E3008AC49B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3085CC28FC01E3008AC49B /* Assets.xcassets */; };
 		3A3085D128FC01E3008AC49B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3085D028FC01E3008AC49B /* Preview Assets.xcassets */; };
+		3A3085D828FC02AC008AC49B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3085D728FC02AC008AC49B /* ScannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A22FCC528FC281D0033D9C1 /* TextItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextItem.swift; sourceTree = "<group>"; };
+		3A22FCC728FC29070033D9C1 /* RecognizedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedContent.swift; sourceTree = "<group>"; };
+		3A22FCC928FC29D30033D9C1 /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		3A3085C528FC01E1008AC49B /* oneTwoKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oneTwoKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3085C828FC01E1008AC49B /* oneTwoKnowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneTwoKnowApp.swift; sourceTree = "<group>"; };
 		3A3085CA28FC01E1008AC49B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A3085CC28FC01E3008AC49B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3085CE28FC01E3008AC49B /* oneTwoKnow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oneTwoKnow.entitlements; sourceTree = "<group>"; };
 		3A3085D028FC01E3008AC49B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A3085D728FC02AC008AC49B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +60,15 @@
 		3A3085C728FC01E1008AC49B /* oneTwoKnow */ = {
 			isa = PBXGroup;
 			children = (
+				3A3085D728FC02AC008AC49B /* ScannerView.swift */,
 				3A3085C828FC01E1008AC49B /* oneTwoKnowApp.swift */,
 				3A3085CA28FC01E1008AC49B /* ContentView.swift */,
 				3A3085CC28FC01E3008AC49B /* Assets.xcassets */,
 				3A3085CE28FC01E3008AC49B /* oneTwoKnow.entitlements */,
 				3A3085CF28FC01E3008AC49B /* Preview Content */,
+				3A22FCC528FC281D0033D9C1 /* TextItem.swift */,
+				3A22FCC728FC29070033D9C1 /* RecognizedContent.swift */,
+				3A22FCC928FC29D30033D9C1 /* TextRecognition.swift */,
 			);
 			path = oneTwoKnow;
 			sourceTree = "<group>";
@@ -139,7 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3085D828FC02AC008AC49B /* ScannerView.swift in Sources */,
+				3A22FCC828FC29070033D9C1 /* RecognizedContent.swift in Sources */,
+				3A22FCC628FC281D0033D9C1 /* TextItem.swift in Sources */,
 				3A3085CB28FC01E1008AC49B /* ContentView.swift in Sources */,
+				3A22FCCA28FC29D30033D9C1 /* TextRecognition.swift in Sources */,
 				3A3085C928FC01E1008AC49B /* oneTwoKnowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +285,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Для распознавания текста приложению нужен доступ к камере вашего устройства";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -287,7 +304,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = agafonov.oneTwoKnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,6 +326,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Для распознавания текста приложению нужен доступ к камере вашего устройства";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -325,7 +345,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = agafonov.oneTwoKnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
