@@ -9,15 +9,14 @@ import SwiftUI
 import Vision
 
 struct TextRecognition {
-    var scannedImages: [UIImage]
-    @ObservedObject var recognizedContent: RecognizedContent
+    var scannedImage: UIImage
+    @Binding var recognizedText: String
     var didFinishRecognition: () -> Void
     
     func recognizeText() {
         let queue = DispatchQueue(label: "textecognitionQueue", qos: .userInitiated)
         queue.async {
-            scannedImages.forEach { image in
-                guard let cgImage = image.cgImage else { return }
+                guard let cgImage = scannedImage.cgImage else { return }
                 let requestHandler = VNImageRequestHandler(cgImage: cgImage)
                 
                 do {
@@ -25,12 +24,11 @@ struct TextRecognition {
                     try requestHandler.perform([getTextRecognitionRequest(with: textItem)])
                     
                     DispatchQueue.main.async {
-                        recognizedContent.items.append(textItem)
+                        recognizedText = textItem.text
                     }
                 } catch {
                     print(error.localizedDescription)
                 }
-            }
             
             DispatchQueue.main.async {
                 didFinishRecognition()

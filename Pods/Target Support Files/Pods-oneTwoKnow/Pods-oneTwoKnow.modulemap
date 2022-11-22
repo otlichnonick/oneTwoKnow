@@ -1,0 +1,6 @@
+framework module Pods_oneTwoKnow {
+  umbrella header "Pods-oneTwoKnow-umbrella.h"
+
+  export *
+  module * { export * }
+}
