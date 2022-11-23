@@ -1,5 +1,5 @@
 //
-//  XButton.swift
+//  ActionButton.swift
 //  oneTwoKnow
 //
 //  Created by Anton Agafonov on 16.11.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct XButton: View {
+struct ActionButton: View {
     var title: String
     var width: CGFloat?
     var callback: () -> Void
@@ -23,12 +23,11 @@ struct XButton: View {
                 .background(CustomColors.mintGreen)
                 .cornerRadius(20)
         }
-
     }
 }
 
 struct XButton_Previews: PreviewProvider {
     static var previews: some View {
-        XButton(title: "text", callback: {})
+        ActionButton(title: "text", callback: {})
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import Vision
 
-struct TextRecognition {
+struct TextRecognitionService {
     var scannedImage: UIImage
     @Binding var recognizedText: String
     var didFinishRecognition: () -> Void

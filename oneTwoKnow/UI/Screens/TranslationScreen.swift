@@ -53,16 +53,11 @@ struct TranslationScreen: View {
                     }
                     .frame(height: 44)
                     .buttonStyle(.bordered)
-
                 }
                 
-                Button {
+                ActionButton(title: "Перевести") {
                     tryTranslate()
-                } label: {
-                    Text("translate")
                 }
-                .frame(height: 44)
-                .buttonStyle(.bordered)
                 
                 ScrollView(showsIndicators: false) {
                     Text(translatedText)
@@ -81,37 +76,16 @@ struct TranslationScreen: View {
                         .font(.title)
                     
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .green))
+                        .progressViewStyle(CircularProgressViewStyle(tint: CustomColors.mintGreen))
                 }
             }
         }
         .sheet(isPresented: $showSheet, content: {
-            VStack {
-                HStack {
-                    Button {
-                        showSheet = false
-                    } label: {
-                        Image(systemName: "xmark")
-                    }
-
-                    Spacer()
-                    
-                    Button {
-                        targetLanguage = allLanguages.first(where: { $0.rawValue == selection }) ?? .english
-                        showSheet = false
-                    } label: {
-                        Text("Сохранить")
-                    }
-                }
-                
-                Picker("", selection: $selection) {
-                    ForEach(allLanguages, id: \.self.rawValue) { lang in
-                        Text(locale.localizedString(forLanguageCode: lang.rawValue) ?? "")
-                    }
-                }
-                .pickerStyle(.wheel)
+            SelectingLanguageView(selection: $selection,
+                                  showSheet: $showSheet,
+                                  allLanguages: allLanguages) {
+                targetLanguage = allLanguages.first(where: { $0.rawValue == selection }) ?? .english
             }
-            .padding()
         })
         .alert(alertTitle, isPresented: $showAlert) {
             Button("OK") {
